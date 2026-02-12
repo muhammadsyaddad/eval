@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- App Sandbox: Required for Mac App Store distribution -->
+    <key>com.apple.security.app-sandbox</key>
+    <true/>
+
+    <!-- File Access: Read/write to user-selected files (export) -->
+    <key>com.apple.security.files.user-selected.read-write</key>
+    <true/>
+
+    <!-- File Access: Read/write to app's own container (Application Support) -->
+    <key>com.apple.security.files.downloads.read-write</key>
+    <false/>
+
+    <!-- Screen Recording: Required for CGWindowListCreateImage -->
+    <!-- Note: Screen Recording is controlled at the OS level via TCC, not entitlements.
+         The entitlement below is for the App Sandbox to allow the CGWindowList API calls. -->
+    <key>com.apple.security.temporary-exception.apple-events</key>
+    <false/>
+
+    <!-- Network Access: EXPLICITLY DENIED — no data leaves the device -->
+    <key>com.apple.security.network.client</key>
+    <false/>
+    <key>com.apple.security.network.server</key>
+    <false/>
+
+    <!-- Accessibility: Needed for WindowMetadataService browser URL extraction -->
+    <!-- Note: Accessibility access is granted via System Preferences, not entitlements.
+         The app uses AXIsProcessTrusted() to check and AXIsProcessTrustedWithOptions() to prompt. -->
+
+    <!-- Camera/Microphone: NOT USED — explicitly denied -->
+    <key>com.apple.security.device.camera</key>
+    <false/>
+    <key>com.apple.security.device.microphone</key>
+    <false/>
+    <key>com.apple.security.device.audio-input</key>
+    <false/>
+
+    <!-- Location: NOT USED -->
+    <key>com.apple.security.personal-information.location</key>
+    <false/>
+
+    <!-- Contacts/Calendar/Photos: NOT USED -->
+    <key>com.apple.security.personal-information.addressbook</key>
+    <false/>
+    <key>com.apple.security.personal-information.calendars</key>
+    <false/>
+    <key>com.apple.security.personal-information.photos-library</key>
+    <false/>
+</dict>
+</plist>

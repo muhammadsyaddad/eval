@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version (e.g. 1.0.0)"
+        required: true
+        type: string
+      build_number:
+        description: "Build number (e.g. 1)"
+        required: true
+        type: string
+
+jobs:
+  build-dmg:
+    runs-on: macos-13
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build app bundle
+        run: |
+          chmod +x Scripts/build_app.sh Scripts/create_dmg.sh Scripts/release_local.sh
+          APP_NAME=MacPulse \
+          VERSION=${{ inputs.version }} \
+          BUILD_NUMBER=${{ inputs.build_number }} \
+          BUNDLE_ID=com.macpulse.app \
+          Scripts/release_local.sh
+
+      - name: Upload DMG artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MacPulse-${{ inputs.version }}-dmg
+          path: dist/*.dmg

@@ -1,14 +1,31 @@
 // swift-tools-version: 5.9
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
-    name: "eval_v3",
+    name: "MacPulse",
+    platforms: [
+        .macOS(.v13)
+    ],
+    products: [
+        .executable(name: "MacPulse", targets: ["MacPulse"])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/groue/GRDB.swift.git", from: "6.24.0")
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .executableTarget(
-            name: "eval_v3"),
+            name: "MacPulse",
+            dependencies: [
+                .product(name: "GRDB", package: "GRDB.swift")
+            ],
+            path: "Sources",
+            exclude: ["MacPulse.entitlements", "Info.plist"]
+        ),
+        .testTarget(
+            name: "MacPulseTests",
+            dependencies: ["MacPulse"],
+            path: "Tests/MacPulseTests"
+        )
     ]
 )
