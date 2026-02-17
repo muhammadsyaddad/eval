@@ -60,7 +60,7 @@ private struct MenuBarHeaderView: View {
 
             VStack(alignment: .leading, spacing: 2) {
                 HStack(spacing: MPTheme.Spacing.xs) {
-                    Text("MACPULSE")
+                    Text("EVAL")
                         .font(MPTheme.Typography.label(10))
                         .foregroundColor(MPTheme.Colors.textPrimary)
                         .tracking(2)

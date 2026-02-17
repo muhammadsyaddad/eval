@@ -9,7 +9,6 @@ Target audience: general knowledge workers — not just developers. The UI must 
 
 ## Target Platform
 
-- macOS 13+ (Ventura). Must run on both Intel and Apple Silicon.
 - Avoid APIs that require macOS 14+ unless guarded with `@available(macOS 14.0, *)`.
 - SwiftUI is the primary UI framework. No AppKit unless bridging is unavoidable.
 - Swift Package Manager (SPM) is the build system. No Xcode project file.

@@ -58,7 +58,7 @@ struct SidebarView: View {
                         .frame(width: 8, height: 8)
                         .shadow(color: MPTheme.Colors.accent.opacity(0.6), radius: 4)
 
-                    Text("MACPULSE")
+                    Text("EVAL")
                         .font(MPTheme.Typography.label(12))
                         .foregroundColor(MPTheme.Colors.textPrimary)
                         .tracking(3)

@@ -20,7 +20,10 @@ let package = Package(
                 .product(name: "GRDB", package: "GRDB.swift")
             ],
             path: "Sources",
-            exclude: ["Eval.entitlements", "Info.plist"]
+            exclude: ["Eval.entitlements", "Info.plist"],
+            resources: [
+                .process("Resources")
+            ]
         ),
         .testTarget(
             name: "EvalTests",

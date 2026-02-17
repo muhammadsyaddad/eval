@@ -16,18 +16,20 @@ struct OnboardingView: View {
 
             VStack(spacing: 0) {
                 // Content
-                TabView(selection: $currentPage) {
-                    WelcomePage()
-                        .tag(0)
-                    PermissionsPage()
-                        .tag(1)
-                    TourPage()
-                        .tag(2)
-                    GetStartedPage()
-                        .tag(3)
+                ZStack {
+                    switch currentPage {
+                    case 0:
+                        WelcomePage()
+                    case 1:
+                        PermissionsPage()
+                    case 2:
+                        TourPage()
+                    default:
+                        GetStartedPage()
+                    }
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
                 .frame(maxHeight: .infinity)
+                .animation(.easeInOut(duration: 0.3), value: currentPage)
 
                 // Navigation footer
                 OnboardingFooter(
