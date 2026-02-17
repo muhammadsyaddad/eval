@@ -32,7 +32,7 @@ final class SummarizationPipeline {
 
     private var timer: Timer?
     private var lastProcessedTimestamp: Date?
-    private let pipelineQueue = DispatchQueue(label: "com.macpulse.summarization", qos: .utility)
+    private let pipelineQueue = DispatchQueue(label: "com.eval.summarization", qos: .utility)
 
     // MARK: - Init
 
@@ -136,7 +136,7 @@ final class SummarizationPipeline {
             }
 
         } catch {
-            print("[MacPulse] Summarization pipeline error: \(error)")
+            print("[Eval] Summarization pipeline error: \(error)")
         }
 
         perfLogger.endMeasurement(pipelineToken)
@@ -268,7 +268,7 @@ final class SummarizationPipeline {
             do {
                 try captureStorage.deleteImage(at: capture.imagePath)
             } catch {
-                print("[MacPulse] Failed to delete capture image: \(error)")
+                print("[Eval] Failed to delete capture image: \(error)")
             }
         }
     }

@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MacPulse — Know How You Spend Your Screen Time",
+  title: "Eval — Know How You Spend Your Screen Time",
   description:
     "Privacy-first macOS app that records and summarizes your daily screen activity. Everything stays on your Mac. No cloud, no tracking, no compromise.",
   keywords: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "on-device AI",
   ],
   openGraph: {
-    title: "MacPulse — Know How You Spend Your Screen Time",
+    title: "Eval — Know How You Spend Your Screen Time",
     description:
       "Privacy-first macOS app that records and summarizes your daily screen activity.",
     type: "website",

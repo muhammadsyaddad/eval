@@ -67,7 +67,7 @@ struct SettingsView: View {
                         // Launch at login
                         SettingsToggleRow(
                             label: "Launch at Login",
-                            description: "Start MacPulse automatically when you log in",
+                            description: "Start Eval automatically when you log in",
                             icon: "power",
                             isOn: settingsBinding.launchAtLogin
                         )
@@ -343,7 +343,7 @@ struct SettingsView: View {
                                     .font(MPTheme.Typography.body(13))
                                     .foregroundColor(MPTheme.Colors.textPrimary)
                                 Text(appState.fileVaultEnabled
-                                     ? "Your disk is encrypted. All MacPulse data is protected at rest."
+                                     ? "Your disk is encrypted. All Eval data is protected at rest."
                                      : "FileVault is not enabled. Consider enabling it in System Settings for full-disk encryption.")
                                     .font(MPTheme.Typography.caption(11))
                                     .foregroundColor(MPTheme.Colors.textTertiary)
@@ -390,7 +390,7 @@ struct SettingsView: View {
                                 Text("Zero Network Access")
                                     .font(MPTheme.Typography.body(13))
                                     .foregroundColor(MPTheme.Colors.textPrimary)
-                                Text("MacPulse has no internet permissions. No data ever leaves your Mac. No analytics, no telemetry.")
+                                Text("Eval has no internet permissions. No data ever leaves your Mac. No analytics, no telemetry.")
                                     .font(MPTheme.Typography.caption(11))
                                     .foregroundColor(MPTheme.Colors.textTertiary)
                             }
@@ -461,7 +461,7 @@ struct SettingsView: View {
 
                 // MARK: - About
                 VStack(alignment: .center, spacing: MPTheme.Spacing.sm) {
-                    Text("MacPulse v0.1.0")
+                    Text("Eval v0.1.0")
                         .font(MPTheme.Typography.mono(11))
                         .foregroundColor(MPTheme.Colors.textTertiary)
                     Text("Privacy-focused activity recorder")

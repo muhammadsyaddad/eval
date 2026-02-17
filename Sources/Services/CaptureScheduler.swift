@@ -41,7 +41,7 @@ final class CaptureScheduler: ObservableObject {
     private var excludedBundleIDs: Set<String> = []
     private var excludedAppNames: Set<String> = []
     private var ocrEnabled: Bool = true
-    private let captureQueue = DispatchQueue(label: "com.macpulse.capture", qos: .utility)
+    private let captureQueue = DispatchQueue(label: "com.eval.capture", qos: .utility)
 
     // MARK: - Init
 

@@ -11,16 +11,16 @@ Scripts/release_local.sh
 Environment variables you can override:
 
 ```bash
-APP_NAME=MacPulse \
+APP_NAME=Eval \
 VERSION=1.0.0 \
 BUILD_NUMBER=1 \
-BUNDLE_ID=com.macpulse.app \
+BUNDLE_ID=com.eval.app \
 Scripts/release_local.sh
 ```
 
 Output:
-- `dist/MacPulse.app`
-- `dist/MacPulse-1.0.0.dmg`
+- `dist/Eval.app`
+- `dist/Eval-1.0.0.dmg`
 
 ## Optional Signing (Developer ID)
 

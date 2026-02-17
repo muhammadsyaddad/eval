@@ -1,4 +1,4 @@
-# Install MacPulse (Local)
+# Install Eval (Local)
 
 1. Build and package the app:
 
@@ -9,10 +9,10 @@ Scripts/release_local.sh
 2. Open the DMG:
 
 ```bash
-open dist/MacPulse-1.0.0.dmg
+open dist/Eval-1.0.0.dmg
 ```
 
-3. Drag `MacPulse.app` into `/Applications`.
+3. Drag `Eval.app` into `/Applications`.
 
 ## If Gatekeeper blocks the app
 

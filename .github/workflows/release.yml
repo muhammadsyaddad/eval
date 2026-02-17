@@ -1,16 +1,9 @@
 name: Release
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: "Release version (e.g. 1.0.0)"
-        required: true
-        type: string
-      build_number:
-        description: "Build number (e.g. 1)"
-        required: true
-        type: string
+  push:
+    tags:
+      - "v*"
 
 jobs:
   build-dmg:
@@ -19,17 +12,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Extract Version
+        id: get_version
+        run: |
+          echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
       - name: Build app bundle
         run: |
           chmod +x Scripts/build_app.sh Scripts/create_dmg.sh Scripts/release_local.sh
-          APP_NAME=MacPulse \
-          VERSION=${{ inputs.version }} \
-          BUILD_NUMBER=${{ inputs.build_number }} \
-          BUNDLE_ID=com.macpulse.app \
+          APP_NAME=Eval \
+          VERSION=${{ steps.get_version.outputs.VERSION}} \
+          BUILD_NUMBER=${{ github.run_number }} \
+          BUNDLE_ID=com.eval.app \
           Scripts/release_local.sh
 
       - name: Upload DMG artifact
         uses: actions/upload-artifact@v4
         with:
-          name: MacPulse-${{ inputs.version }}-dmg
+          name: Eval-${{ steps.get_version.outputs.VERSION }}-dmg
           path: dist/*.dmg

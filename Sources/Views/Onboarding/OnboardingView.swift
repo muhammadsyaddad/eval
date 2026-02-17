@@ -26,7 +26,7 @@ struct OnboardingView: View {
                     GetStartedPage()
                         .tag(3)
                 }
-                .tabViewStyle(.automatic)
+                .tabViewStyle(.page(indexDisplayMode: .never))
                 .frame(maxHeight: .infinity)
 
                 // Navigation footer
@@ -65,7 +65,7 @@ private struct WelcomePage: View {
             }
 
             VStack(spacing: MPTheme.Spacing.md) {
-                Text("Welcome to MacPulse")
+                Text("Welcome to Eval")
                     .font(MPTheme.Typography.display(28))
                     .foregroundColor(MPTheme.Colors.textPrimary)
 
@@ -117,7 +117,7 @@ private struct PermissionsPage: View {
                     .font(MPTheme.Typography.display(24))
                     .foregroundColor(MPTheme.Colors.textPrimary)
 
-                Text("MacPulse needs access to capture your screen content")
+                Text("Eval needs access to capture your screen content")
                     .font(MPTheme.Typography.body(13))
                     .foregroundColor(MPTheme.Colors.textSecondary)
                     .multilineTextAlignment(.center)
@@ -234,7 +234,7 @@ private struct GetStartedPage: View {
                     .font(MPTheme.Typography.display(28))
                     .foregroundColor(MPTheme.Colors.textPrimary)
 
-                Text("MacPulse will capture your screen activity and generate\nintelligent summaries — all on-device, all private.")
+                Text("Eval will capture your screen activity and generate\nintelligent summaries — all on-device, all private.")
                     .font(MPTheme.Typography.body(13))
                     .foregroundColor(MPTheme.Colors.textSecondary)
                     .multilineTextAlignment(.center)

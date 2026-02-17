@@ -84,7 +84,7 @@ final class MenuBarManager: ObservableObject {
         appState.selectedTab = tab
         // Bring the main window to front
         NSApplication.shared.activate(ignoringOtherApps: true)
-        if let window = NSApplication.shared.windows.first(where: { $0.title.contains("MacPulse") || $0.isKeyWindow || !$0.title.isEmpty }) {
+        if let window = NSApplication.shared.windows.first(where: { $0.title.contains("Eval") || $0.isKeyWindow || !$0.title.isEmpty }) {
             window.makeKeyAndOrderFront(nil)
         }
     }

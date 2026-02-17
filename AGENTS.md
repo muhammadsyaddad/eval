@@ -1,8 +1,8 @@
-# MacPulse — Agent Context
+# Eval — Agent Context
 
 ## Purpose
 
-MacPulse is a privacy-focused, open-source macOS app that records and summarizes 24 hours of on-device activity. It captures the active window (screenshot + metadata), extracts text via local OCR (Apple Vision), and generates natural language summaries using a local small language model (SLM). No data ever leaves the user's Mac.
+Eval is a privacy-focused, open-source macOS app that records and summarizes 24 hours of on-device activity. It captures the active window (screenshot + metadata), extracts text via local OCR (Apple Vision), and generates natural language summaries using a local small language model (SLM). No data ever leaves the user's Mac.
 
 Target audience: general knowledge workers — not just developers. The UI must be approachable and polished enough for non-technical users who want to understand how they spend their screen time.
 
@@ -18,7 +18,7 @@ Target audience: general knowledge workers — not just developers. The UI must 
 ## Architecture
 
 ```
-MacPulseApp (@main)
+EvalApp (@main)
 ├── Models/          — Data types, enums, app state
 ├── Theme/           — Design system (colors, typography, spacing, modifiers)
 ├── Views/
@@ -40,7 +40,7 @@ MacPulseApp (@main)
 - `ScreenCaptureService` — captures active window via `CGWindowListCreateImage`
 - `WindowMetadataService` — reads app name, bundle ID, window title, browser URLs via Accessibility API
 - `CaptureScheduler` — timer-driven capture loop with start/pause/resume/stop, respects exclusions
-- `CaptureStorageService` — saves PNG + JSON metadata to `~/Library/Application Support/MacPulse/Captures/`
+- `CaptureStorageService` — saves PNG + JSON metadata to `~/Library/Application Support/Eval/Captures/`
 - `PermissionManager` — checks/requests Screen Recording and Accessibility permissions
 - `AppState` updated with `captureScheduler`, `permissionManager`, settings binding
 - `ContentView` updated with `CaptureStatusFooter` for live capture status in sidebar
@@ -75,7 +75,7 @@ Unit tests: 52 tests covering scheduler lifecycle, metadata models, storage, OCR
 **M5 (Done — 8/8 items):** Menu Bar Widget & Quick View:
 - `MenuBarManager` — service binding to AppState via Combine, tracks icon state + quick stats
 - `MenuBarPopoverView` — compact popover with status header, today stats (screen time, activities, productivity, top app), toggle button, navigation links, quit
-- `MenuBarExtra` wired as second Scene in `MacPulseApp.swift` with `.window` style
+- `MenuBarExtra` wired as second Scene in `EvalApp.swift` with `.window` style
 - Menu bar icon states: capturing (waveform.circle.fill), paused (pause.circle), idle (circle.dotted), error (exclamationmark.circle)
 - Global keyboard shortcut: Cmd+Shift+C to toggle capture via Commands menu
 - Menu bar popover now binds directly to `CaptureScheduler.status` for real-time badge/action sync
@@ -101,7 +101,7 @@ Unit tests: 245 total (38 PerformanceLogger + 37 search/polish), all passing. Bu
 - `AppState.clearAllData()` — orchestrated purge: stops capture + summarization, deletes DB rows, deletes capture files, vacuums DB, resets all @Published properties
 - `DatabaseManager.vacuumDatabase()` — runs `VACUUM` via `barrierWriteWithoutTransaction` (outside transaction)
 - `CaptureStorageService.deleteAllCaptures()` — removes entire Captures directory tree, recreates empty dir
-- `MacPulse.entitlements` — App Sandbox ON, all network/hardware access disabled
+- `Eval.entitlements` — App Sandbox ON, all network/hardware access disabled
 - `Info.plist` — Screen Recording + Accessibility usage descriptions, ATS with local networking disabled
 - `SettingsView` PRIVACY & DATA section — FileVault status, app-level encryption toggle, zero network badge, Clear All Data with confirmation dialog
 - `PRIVACY.md` — comprehensive privacy policy for App Store and GitHub
@@ -183,7 +183,7 @@ Model management: download, verify, cache in app support directory. User selects
 
 v1.0 targets three channels:
 1. **GitHub Releases**: signed + notarized DMG
-2. **Homebrew**: `brew install --cask macpulse`
+2. **Homebrew**: `brew install --cask eval`
 3. **Mac App Store**: sandboxed submission
 
 See `MILESTONES.md` for the detailed roadmap (M0–M8).
@@ -191,7 +191,7 @@ See `MILESTONES.md` for the detailed roadmap (M0–M8).
 
 ## Conventions
 
-- All source lives under `Sources/` in the SPM target `MacPulse`.
+- All source lives under `Sources/` in the SPM target `Eval`.
 - Theme constants go in `MPTheme` (never hardcode colors or font sizes in views).
 - View modifiers: `.cardStyle()`, `.sectionLabel()`, `.glowAccent()` for consistency.
 - Extensions on `TimeInterval` and `Date` for formatted display strings.

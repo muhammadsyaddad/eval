@@ -98,7 +98,7 @@ class AppState: ObservableObject {
             self.exportService = nil
             self.retentionService = nil
             self.summarizationPipeline = nil
-            print("[MacPulse] Failed to initialize database: \(error). Using empty state.")
+            print("[Eval] Failed to initialize database: \(error). Using empty state.")
         }
 
         // Load real data from DB (or keep mock defaults)
@@ -114,7 +114,7 @@ class AppState: ObservableObject {
             DispatchQueue.main.async {
                 self?.showError(
                     title: "\(permissionName) Permission Revoked",
-                    message: "MacPulse requires \(permissionName) permission to function. Please re-enable it in System Settings > Privacy & Security.",
+                    message: "Eval requires \(permissionName) permission to function. Please re-enable it in System Settings > Privacy & Security.",
                     severity: .error
                 )
                 // Stop capture if screen recording was revoked
@@ -262,7 +262,7 @@ class AppState: ObservableObject {
             }
 
         } catch {
-            print("[MacPulse] Error loading data from DataStore: \(error). Keeping empty/cached data.")
+            print("[Eval] Error loading data from DataStore: \(error). Keeping empty/cached data.")
         }
     }
 
@@ -274,7 +274,7 @@ class AppState: ObservableObject {
             try store.insertCapture(record)
             scheduleSummarizationRefresh()
         } catch {
-            print("[MacPulse] Failed to store capture: \(error)")
+            print("[Eval] Failed to store capture: \(error)")
         }
     }
 
@@ -298,11 +298,11 @@ class AppState: ObservableObject {
         do {
             let result = try retention.applyRetention()
             if result.totalDeleted > 0 {
-                print("[MacPulse] Retention cleaned up \(result.totalDeleted) rows.")
+                print("[Eval] Retention cleaned up \(result.totalDeleted) rows.")
                 loadData() // Refresh after cleanup
             }
         } catch {
-            print("[MacPulse] Retention error: \(error)")
+            print("[Eval] Retention error: \(error)")
         }
     }
 
@@ -386,7 +386,7 @@ class AppState: ObservableObject {
                     ))
                 }
             } catch {
-                print("[MacPulse] Search error: \(error)")
+                print("[Eval] Search error: \(error)")
             }
 
             // Sort by date descending
@@ -485,7 +485,7 @@ class AppState: ObservableObject {
                 self.isClearingData = false
 
                 if errors.isEmpty {
-                    print("[MacPulse] All data cleared successfully.")
+                    print("[Eval] All data cleared successfully.")
                 } else {
                     let message = errors.joined(separator: "; ")
                     self.showError(

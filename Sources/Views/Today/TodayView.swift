@@ -34,7 +34,7 @@ struct TodayView: View {
                     EmptyStateView(
                         icon: "sun.max.fill",
                         title: "No Activity Yet",
-                        description: "Start a capture session to begin tracking your screen activity. MacPulse will record and summarize what you do throughout the day.",
+                        description: "Start a capture session to begin tracking your screen activity. Eval will record and summarize what you do throughout the day.",
                         ctaTitle: "Start Capturing",
                         ctaAction: {
                             appState.startCapture()

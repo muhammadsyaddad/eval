@@ -25,7 +25,7 @@ export function Navbar() {
             </svg>
           </div>
           <span className="font-display font-bold text-lg tracking-tight text-text-primary">
-            MacPulse
+            Eval
           </span>
         </a>
 
@@ -110,7 +110,7 @@ export function Hero() {
 
         <FadeIn delay={0.35}>
           <p className="text-text-secondary text-lg sm:text-xl max-w-xl mx-auto leading-relaxed mb-10">
-            MacPulse quietly watches your screen, summarizes your day, and helps
+            Eval quietly watches your screen, summarizes your day, and helps
             you understand your habits.{" "}
             <span className="text-text-primary font-medium">
               Everything stays on your Mac.
@@ -171,7 +171,7 @@ export function Hero() {
                   <div className="w-3 h-3 rounded-full bg-[#28C840]" />
                 </div>
                 <span className="text-text-tertiary text-xs font-mono ml-3">
-                  MacPulse
+                  Eval
                 </span>
               </div>
 
@@ -322,7 +322,7 @@ const features = [
     ),
     title: "Automatic Activity Tracking",
     description:
-      "MacPulse captures what app you're using and what you're working on — automatically, in the background. No manual logging needed.",
+      "Eval captures what app you're using and what you're working on — automatically, in the background. No manual logging needed.",
   },
   {
     icon: (
@@ -472,7 +472,7 @@ const steps = [
   },
   {
     number: "02",
-    title: "MacPulse Works in the Background",
+    title: "Eval Works in the Background",
     description:
       "It quietly captures what app you're using every few seconds, reads the text on screen, and saves it locally on your Mac.",
     visual: "◉",
@@ -481,7 +481,7 @@ const steps = [
     number: "03",
     title: "Get Your Summary",
     description:
-      "Open MacPulse anytime to see a clear breakdown of your day — top apps, focus time, productivity score, and a written summary.",
+      "Open Eval anytime to see a clear breakdown of your day — top apps, focus time, productivity score, and a written summary.",
     visual: "✦",
   },
 ];
@@ -588,7 +588,7 @@ export function Privacy() {
                 Your data never leaves your Mac.
               </h2>
               <p className="text-text-secondary text-lg max-w-lg mb-12">
-                MacPulse is built on one principle: your screen activity is nobody&apos;s
+                Eval is built on one principle: your screen activity is nobody&apos;s
                 business but yours. No accounts, no cloud, no tracking — ever.
               </p>
             </FadeIn>
@@ -777,8 +777,8 @@ export function Preview() {
 
 const faqs = [
   {
-    q: "Does MacPulse send any data to the internet?",
-    a: "No. MacPulse has zero network permissions — it physically cannot connect to the internet. This is enforced by the macOS sandbox, not just a promise.",
+    q: "Does Eval send any data to the internet?",
+    a: "No. Eval has zero network permissions — it physically cannot connect to the internet. This is enforced by the macOS sandbox, not just a promise.",
   },
   {
     q: "How much disk space does it use?",
@@ -786,11 +786,11 @@ const faqs = [
   },
   {
     q: "Does it work on Intel Macs?",
-    a: "Yes. MacPulse runs on macOS 13 (Ventura) and later, on both Intel and Apple Silicon Macs.",
+    a: "Yes. Eval runs on macOS 13 (Ventura) and later, on both Intel and Apple Silicon Macs.",
   },
   {
     q: "Can I exclude certain apps?",
-    a: "Absolutely. Add any app to the exclusion list in Settings and MacPulse will skip it entirely — no screenshots, no OCR, no summary.",
+    a: "Absolutely. Add any app to the exclusion list in Settings and Eval will skip it entirely — no screenshots, no OCR, no summary.",
   },
   {
     q: "What does the AI summary use? Does it need GPT/OpenAI?",
@@ -798,7 +798,7 @@ const faqs = [
   },
   {
     q: "Is it really free?",
-    a: "Yes. MacPulse is free and open source under a permissive license. You can inspect the code, build from source, and contribute.",
+    a: "Yes. Eval is free and open source under a permissive license. You can inspect the code, build from source, and contribute.",
   },
 ];
 
@@ -874,7 +874,7 @@ export function DownloadCTA() {
                 Ready to take control?
               </h2>
               <p className="text-text-secondary text-lg max-w-md mx-auto mb-10">
-                Download MacPulse and start understanding your screen time today.
+                Download Eval and start understanding your screen time today.
                 Free, private, yours.
               </p>
 
@@ -938,7 +938,7 @@ export function Footer() {
               </svg>
             </div>
             <span className="font-display font-bold text-sm text-text-secondary">
-              MacPulse
+              Eval
             </span>
           </div>
 

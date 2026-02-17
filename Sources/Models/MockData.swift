@@ -38,7 +38,7 @@ struct MockDataStore {
                 timestamp: cal.date(bySettingHour: 9, minute: 30, second: 0, of: now)!,
                 appName: "Xcode",
                 appIcon: "hammer.fill",
-                title: "MacPulse — OCR pipeline",
+                title: "Eval — OCR pipeline",
                 summary: "Implemented VNRecognizeTextRequest handler for screen capture processing. Added confidence threshold filtering.",
                 category: .development,
                 duration: 5400
@@ -74,7 +74,7 @@ struct MockDataStore {
                 timestamp: cal.date(bySettingHour: 13, minute: 20, second: 0, of: now)!,
                 appName: "Xcode",
                 appIcon: "hammer.fill",
-                title: "MacPulse — timeline UI",
+                title: "Eval — timeline UI",
                 summary: "Built vertical timeline component with SwiftUI. Implemented activity cards with category color coding.",
                 category: .development,
                 duration: 7200
@@ -101,7 +101,7 @@ struct MockDataStore {
                 timestamp: cal.date(bySettingHour: 16, minute: 20, second: 0, of: now)!,
                 appName: "Xcode",
                 appIcon: "hammer.fill",
-                title: "MacPulse — insights chart view",
+                title: "Eval — insights chart view",
                 summary: "Implemented weekly bar chart using Swift Charts. Added category breakdown donut visualization.",
                 category: .development,
                 duration: 4800
@@ -120,7 +120,7 @@ struct MockDataStore {
             date: now,
             totalScreenTime: 31680,
             topApps: todayTopApps,
-            aiSummary: "Highly productive development day focused on MacPulse. Built OCR pipeline and timeline UI in Xcode (5.2h). Collaborated with team via Slack and refined Settings wireframes in Figma. Light browsing in the afternoon. 87% of screen time was productive.",
+            aiSummary: "Highly productive development day focused on Eval. Built OCR pipeline and timeline UI in Xcode (5.2h). Collaborated with team via Slack and refined Settings wireframes in Figma. Light browsing in the afternoon. 87% of screen time was productive.",
             activityCount: 10,
             productivityScore: 0.87
         )

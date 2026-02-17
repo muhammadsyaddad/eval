@@ -2,9 +2,9 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-APP_NAME="${APP_NAME:-MacPulse}"
+APP_NAME="${APP_NAME:-Eval}"
 CONFIGURATION="${CONFIGURATION:-release}"
-BUNDLE_ID="${BUNDLE_ID:-com.macpulse.app}"
+BUNDLE_ID="${BUNDLE_ID:-com.eval.app}"
 VERSION="${VERSION:-1.0.0}"
 BUILD_NUMBER="${BUILD_NUMBER:-1}"
 DIST_DIR="${DIST_DIR:-"$ROOT_DIR/dist"}"
@@ -15,7 +15,7 @@ CONTENTS_PATH="$APP_PATH/Contents"
 MACOS_PATH="$CONTENTS_PATH/MacOS"
 RESOURCES_PATH="$CONTENTS_PATH/Resources"
 INFO_TEMPLATE="$ROOT_DIR/Sources/Info.plist"
-ENTITLEMENTS="$ROOT_DIR/Sources/MacPulse.entitlements"
+ENTITLEMENTS="$ROOT_DIR/Sources/Eval.entitlements"
 INFO_OUT="$CONTENTS_PATH/Info.plist"
 
 mkdir -p "$DIST_DIR"

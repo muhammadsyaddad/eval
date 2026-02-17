@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Performance Logger
 
-/// Lightweight performance profiling service for MacPulse.
+/// Lightweight performance profiling service for Eval.
 ///
 /// Provides timing utilities for the capture pipeline, database queries, OCR processing,
 /// and summarization. Also tracks memory usage over long capture sessions.
@@ -246,7 +246,7 @@ final class PerformanceLogger {
         lock.unlock()
 
         if consoleLoggingEnabled {
-            print("[MacPulse:Perf] Memory: \(String(format: "%.1f", snapshot.residentMB)) MB resident, \(String(format: "%.1f", snapshot.virtualMB)) MB virtual")
+            print("[Eval:Perf] Memory: \(String(format: "%.1f", snapshot.residentMB)) MB resident, \(String(format: "%.1f", snapshot.virtualMB)) MB virtual")
         }
 
         return snapshot
@@ -346,7 +346,7 @@ final class PerformanceLogger {
     /// Generate a human-readable performance report.
     func generateReport() -> String {
         var lines: [String] = []
-        lines.append("=== MacPulse Performance Report ===")
+        lines.append("=== Eval Performance Report ===")
         lines.append("Generated: \(ISO8601DateFormatter().string(from: Date()))")
         lines.append("")
 
@@ -422,7 +422,7 @@ final class PerformanceLogger {
         let isSlow = measurement.duration >= slowOperationThreshold
 
         if consoleLoggingEnabled || isSlow {
-            var msg = "[MacPulse:Perf] \(measurement.category.rawValue)"
+            var msg = "[Eval:Perf] \(measurement.category.rawValue)"
             if measurement.label != measurement.category.rawValue {
                 msg += "/\(measurement.label)"
             }

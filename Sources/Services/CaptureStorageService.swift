@@ -41,13 +41,13 @@ struct StoredCapture: Identifiable, Codable {
 
 final class CaptureStorageService: CaptureStorageServiceProtocol {
 
-    /// Base directory for all captures: ~/Library/Application Support/MacPulse/Captures/
+    /// Base directory for all captures: ~/Library/Application Support/Eval/Captures/
     static var capturesDirectory: URL? {
         guard let appSupport = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first else {
             return nil
         }
         return appSupport
-            .appendingPathComponent("MacPulse", isDirectory: true)
+            .appendingPathComponent("Eval", isDirectory: true)
             .appendingPathComponent("Captures", isDirectory: true)
     }
 

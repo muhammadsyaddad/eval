@@ -2,10 +2,10 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-APP_NAME="${APP_NAME:-MacPulse}"
+APP_NAME="${APP_NAME:-Eval}"
 VERSION="${VERSION:-1.0.0}"
 BUILD_NUMBER="${BUILD_NUMBER:-1}"
-BUNDLE_ID="${BUNDLE_ID:-com.macpulse.app}"
+BUNDLE_ID="${BUNDLE_ID:-com.eval.app}"
 
 export APP_NAME VERSION BUILD_NUMBER BUNDLE_ID
 

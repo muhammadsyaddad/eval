@@ -14,7 +14,7 @@ final class DatabaseManager {
     let databaseURL: URL
 
     /// Creates a DatabaseManager backed by a file at the given URL.
-    /// If no URL is provided, defaults to ~/Library/Application Support/MacPulse/macpulse.db
+    /// If no URL is provided, defaults to ~/Library/Application Support/Eval/eval.db
     init(databaseURL: URL? = nil) throws {
         let url = databaseURL ?? Self.defaultDatabaseURL()
         self.databaseURL = url
@@ -40,15 +40,15 @@ final class DatabaseManager {
         try DatabaseManager(databaseURL: URL(fileURLWithPath: ":memory:"))
     }
 
-    /// Default database path: ~/Library/Application Support/MacPulse/macpulse.db
+    /// Default database path: ~/Library/Application Support/Eval/eval.db
     static func defaultDatabaseURL() -> URL {
         let appSupport = FileManager.default.urls(
             for: .applicationSupportDirectory,
             in: .userDomainMask
         ).first!
         return appSupport
-            .appendingPathComponent("MacPulse", isDirectory: true)
-            .appendingPathComponent("macpulse.db")
+            .appendingPathComponent("Eval", isDirectory: true)
+            .appendingPathComponent("eval.db")
     }
 
     /// Total size of the database file on disk (bytes).

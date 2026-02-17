@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-APP_NAME="${APP_NAME:-MacPulse}"
+APP_NAME="${APP_NAME:-Eval}"
 VERSION="${VERSION:-1.0.0}"
 DIST_DIR="${DIST_DIR:-"$ROOT_DIR/dist"}"
 APP_PATH="$DIST_DIR/$APP_NAME.app"

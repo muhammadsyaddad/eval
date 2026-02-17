@@ -1,6 +1,6 @@
-# MacPulse
+# Eval
 
-MacPulse is a privacy-focused macOS app that records and summarizes on-device activity using local OCR and summarization. No data leaves your Mac.
+Eval is a privacy-focused macOS app that records and summarizes on-device activity using local OCR and summarization. No data leaves your Mac.
 
 ## Features
 
@@ -25,7 +25,7 @@ swift run
 
 ## Permissions
 
-MacPulse needs Screen Recording and Accessibility permissions to capture active windows and read window titles/URLs.
+Eval needs Screen Recording and Accessibility permissions to capture active windows and read window titles/URLs.
 
 ## Local Release (Unsigned)
 

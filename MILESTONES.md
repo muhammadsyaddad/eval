@@ -1,4 +1,4 @@
-# MacPulse — Milestones to v1.0 Launch
+# Eval — Milestones to v1.0 Launch
 
 ## M0: Foundation (DONE)
 > SwiftUI shell with mock data. Proves the UI direction and project structure.
@@ -112,7 +112,7 @@
 ## M7: Privacy, Security & Sandboxing (DONE)
 > Harden for distribution. All data stays local.
 
-- [x] App Sandbox entitlements for Mac App Store (MacPulse.entitlements with all network/hardware access disabled)
+- [x] App Sandbox entitlements for Mac App Store (Eval.entitlements with all network/hardware access disabled)
 - [x] Screen Recording and Accessibility permission handling (graceful denial, periodic re-check with revocation callback)
 - [x] No network access: verified zero outbound connections via entitlements + Info.plist ATS config
 - [x] Encrypted at-rest storage option (FileVault detection via fdesetup + AES-256-GCM app-level encryption via CryptoKit)

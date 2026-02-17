@@ -1,6 +1,6 @@
 import SwiftUI
 
-// MARK: - MacPulse Design System
+// MARK: - Eval Design System
 // Aesthetic: Refined Dark Industrial — precision instrument meets privacy dashboard
 // Warm amber accent on deep charcoal, monospaced timestamps, generous negative space
 

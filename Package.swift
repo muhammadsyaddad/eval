@@ -3,29 +3,29 @@
 import PackageDescription
 
 let package = Package(
-    name: "MacPulse",
+    name: "Eval",
     platforms: [
         .macOS(.v13)
     ],
     products: [
-        .executable(name: "MacPulse", targets: ["MacPulse"])
+        .executable(name: "Eval", targets: ["Eval"])
     ],
     dependencies: [
         .package(url: "https://github.com/groue/GRDB.swift.git", from: "6.24.0")
     ],
     targets: [
         .executableTarget(
-            name: "MacPulse",
+            name: "Eval",
             dependencies: [
                 .product(name: "GRDB", package: "GRDB.swift")
             ],
             path: "Sources",
-            exclude: ["MacPulse.entitlements", "Info.plist"]
+            exclude: ["Eval.entitlements", "Info.plist"]
         ),
         .testTarget(
-            name: "MacPulseTests",
-            dependencies: ["MacPulse"],
-            path: "Tests/MacPulseTests"
+            name: "EvalTests",
+            dependencies: ["Eval"],
+            path: "EvalTests"
         )
     ]
 )

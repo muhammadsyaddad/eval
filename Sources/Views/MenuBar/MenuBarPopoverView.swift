@@ -290,7 +290,7 @@ private struct MenuBarActionsView: View {
                         .foregroundColor(MPTheme.Colors.textTertiary)
                         .frame(width: 16)
 
-                    Text("Quit MacPulse")
+                    Text("Quit Eval")
                         .font(MPTheme.Typography.body(12))
                         .foregroundColor(MPTheme.Colors.textSecondary)
 

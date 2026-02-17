@@ -206,7 +206,7 @@ enum TrendDirection: String {
 struct AppSettings {
     var captureIntervalSeconds: Int = 30
     var excludedApps: [String] = ["Keychain Access", "1Password", "System Preferences"]
-    var storageLocation: String = "~/Library/Application Support/MacPulse"
+    var storageLocation: String = "~/Library/Application Support/Eval"
     var storageLimitGB: Double = 5.0
     var currentStorageGB: Double = 0.0
     var aiModelName: String = "Llama 3.2 1B"
