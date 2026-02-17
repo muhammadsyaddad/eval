@@ -110,8 +110,8 @@ export function Hero() {
 
         <FadeIn delay={0.35}>
           <p className="text-text-secondary text-lg sm:text-xl max-w-xl mx-auto leading-relaxed mb-10">
-            Eval quietly watches your screen, summarizes your day, and helps
-            you understand your habits.{" "}
+            Eval quietly watches your screen, summarizes your day, and helps you
+            understand your habits.{" "}
             <span className="text-text-primary font-medium">
               Everything stays on your Mac.
             </span>
@@ -206,7 +206,11 @@ export function Hero() {
                     {/* Stats row */}
                     <div className="grid grid-cols-3 gap-3">
                       {[
-                        { label: "SCREEN TIME", value: "6h 42m", delta: "+12%" },
+                        {
+                          label: "SCREEN TIME",
+                          value: "6h 42m",
+                          delta: "+12%",
+                        },
                         { label: "ACTIVITIES", value: "47", delta: "" },
                         { label: "PRODUCTIVITY", value: "78%", delta: "+5%" },
                       ].map((stat) => (
@@ -236,8 +240,9 @@ export function Hero() {
                       </p>
                       <p className="text-sm text-text-secondary leading-relaxed">
                         You spent most of your morning in VS Code working on the
-                        authentication module. After lunch, you switched to Figma
-                        for design reviews. Productivity peaked between 9–11 AM.
+                        authentication module. After lunch, you switched to
+                        Figma for design reviews. Productivity peaked between
+                        9–11 AM.
                       </p>
                     </div>
 
@@ -334,13 +339,7 @@ const features = [
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        <circle
-          cx="12"
-          cy="12"
-          r="9"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
+        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
       </svg>
     ),
     title: "Daily Summaries",
@@ -355,13 +354,7 @@ const features = [
           stroke="currentColor"
           strokeWidth="2"
         />
-        <circle
-          cx="12"
-          cy="12"
-          r="3"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
+        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2" />
       </svg>
     ),
     title: "Smart Text Recognition",
@@ -552,12 +545,14 @@ const privacyPoints = [
   {
     icon: "🚫",
     label: "Zero Network Access",
-    detail: "The app has no internet permissions. Verified at macOS sandbox level.",
+    detail:
+      "The app has no internet permissions. Verified at macOS sandbox level.",
   },
   {
     icon: "💾",
     label: "On-Device Only",
-    detail: "All data stays in ~/Library/Application Support. Never uploaded anywhere.",
+    detail:
+      "All data stays in ~/Library/Application Support. Never uploaded anywhere.",
   },
   {
     icon: "🔐",
@@ -567,7 +562,8 @@ const privacyPoints = [
   {
     icon: "🗑️",
     label: "You Control Your Data",
-    detail: "Clear everything with one click. Set auto-delete policies. Export anytime.",
+    detail:
+      "Clear everything with one click. Set auto-delete policies. Export anytime.",
   },
 ];
 
@@ -588,8 +584,9 @@ export function Privacy() {
                 Your data never leaves your Mac.
               </h2>
               <p className="text-text-secondary text-lg max-w-lg mb-12">
-                Eval is built on one principle: your screen activity is nobody&apos;s
-                business but yours. No accounts, no cloud, no tracking — ever.
+                Eval is built on one principle: your screen activity is
+                nobody&apos;s business but yours. No accounts, no cloud, no
+                tracking — ever.
               </p>
             </FadeIn>
 
@@ -622,7 +619,8 @@ export function Privacy() {
                     Fully open source
                   </p>
                   <p className="text-text-tertiary text-sm">
-                    Inspect every line of code. Build from source. Trust, but verify.
+                    Inspect every line of code. Build from source. Trust, but
+                    verify.
                   </p>
                 </div>
                 <a
@@ -670,7 +668,7 @@ export function Preview() {
                       className="flex-1 rounded-sm bg-accent/20 hover:bg-accent/40 transition-colors"
                       style={{ height: `${h}%` }}
                     />
-                  )
+                  ),
                 )}
               </div>
               <p className="text-text-secondary text-sm">
@@ -880,7 +878,7 @@ export function DownloadCTA() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
-                  href="#"
+                  href="https://github.com/muhammadsyaddad/eval/actions/runs/22090614867/artifacts/5535434031"
                   className="group px-10 py-4 rounded-full bg-accent text-bg-void font-bold text-lg hover:bg-accent/90 transition-all glow-amber flex items-center gap-3"
                 >
                   <svg
@@ -943,18 +941,24 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-6 text-sm text-text-tertiary">
-            <a href="#" className="hover:text-text-secondary transition-colors">
+            <a
+              href="https://github.com/muhammadsyaddad/eval/blob/main/PRIVACY.md"
+              className="hover:text-text-secondary transition-colors"
+            >
               Privacy Policy
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/muhammadsyaddad/eval"
               target="_blank"
               rel="noopener"
               className="hover:text-text-secondary transition-colors"
             >
               GitHub
             </a>
-            <a href="#" className="hover:text-text-secondary transition-colors">
+            <a
+              href="https://github.com/muhammadsyaddad/eval/actions"
+              className="hover:text-text-secondary transition-colors"
+            >
               Changelog
             </a>
           </div>
