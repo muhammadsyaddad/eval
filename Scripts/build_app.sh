@@ -31,6 +31,10 @@ fi
 mkdir -p "$MACOS_PATH" "$RESOURCES_PATH"
 cp "$BINARY_PATH" "$MACOS_PATH/$APP_NAME"
 
+if [[ -d "$ROOT_DIR/Sources/Resources" ]]; then
+  cp -R "$ROOT_DIR/Sources/Resources/"* "$RESOURCES_PATH/" 2>/dev/null || true
+fi
+
 export APP_NAME BUNDLE_ID VERSION BUILD_NUMBER INFO_TEMPLATE INFO_OUT
 /usr/bin/python3 - <<'PY'
 import os
